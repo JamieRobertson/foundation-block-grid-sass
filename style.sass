@@ -1,0 +1,17 @@
+@import 'block-grid'
+
+$block-grid-padding: 5px
+
+// Example of how to use the block grid 
+// mixin with Bootstrap 4 media queries
+ul.block-grid-wrapper
+    +block_grid_wrapper($padding: $block-grid-padding)
+
+    > li
+        +block_grid_item($padding: $block-grid-padding, $per-row: 1)
+
+        +media-breakpoint-up(sm)
+            +block_grid_item($padding: $block-grid-padding, $per-row: 2)
+
+        +media-breakpoint-up(lg)
+            +block_grid_item($padding: $block-grid-padding, $per-row: 3)
